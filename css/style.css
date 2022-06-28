@@ -23,6 +23,7 @@
     /*background-colors  */
     --bg-main: #FFFFFF;
     --bg-secondary: #2F303A;
+    --bg-feature-icon-container: #F5F4FA; 
     --bg-team-section: #F5F4FA;
     --bg-btn-v1: #2196F3;
     --bg-btn-v1-active: #188CE8;
@@ -32,6 +33,9 @@
     /* other collors */
     --header-bottom-border-clr: #ECECEC;
     --product-card-border-clr: #ECECEC;
+    --client-logo-clr: #AFB1B8;
+    --social-icon-bg-clr: #fff;
+    --socia-icon-clr: #AFB1B8;
 }
 
 body {
@@ -150,18 +154,24 @@ ul {
 .header-contacts {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
     margin-left: auto;
 }
 
 .header-contacts-link {
-    display: block;
+    display: flex;
+    column-gap: 10px;
     padding: 32px 0;
+    align-items: center;
 
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--text-nav-link-address);
+}
+
+.header-contacts-link-icon {
+    stroke: currentColor;
 }
 
 /* header styles end */
@@ -172,6 +182,11 @@ ul {
 .footer {
     padding: 60px 0;
     background-color: var(--bg-secondary);
+}
+
+.footer > .container {
+    display: flex;
+    column-gap: 70px;
 }
 
 .footer-logo-link {
@@ -198,6 +213,38 @@ ul {
     font-style: normal;
 }
 
+.footer-socials {
+    padding: 12px 0;
+}
+
+.footer-socials-header {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--text-header-secondary);
+    margin-bottom: 20px;
+}
+
+.footer-social-list {
+    display: flex;
+    column-gap: 10px;
+}
+
+.footer-social-link {
+    display: block;
+    line-height: 0;
+    
+    --social-icon-bg-clr: rgba(255, 255, 255, 0.1);;
+    --social-icon-clr: var(--text-secondary);
+}
+
+.footer-social-link:hover {
+    color: var(--text-link-active);
+    --social-icon-bg-clr: currentColor;
+}
+
 /* footer styles end */
 
 
@@ -205,6 +252,7 @@ ul {
 .welcome {
     padding: 200px 0;
     background-color: var(--bg-secondary);
+    background: url(../images/index/welcome-section-bg.jpg) ;
 }
 
 .welcome-header {
@@ -251,6 +299,16 @@ ul {
 
 .feature-card {
     width: 270px;
+}
+
+.feature-card-icon-container {
+    margin-bottom: 30px;
+    padding: 25px 100px;
+    width: 270px;
+    height: 120px;
+    background-color: var(--bg-feature-icon-container);
+    border-radius: 4px;
+    text-align: center;
 }
 
 .feature-card-header {
@@ -328,7 +386,7 @@ ul {
 }
 
 .team-card-note {
-    padding: 30px 0;
+    padding: 30px 32px;
 }
 
 .team-card-header {
@@ -342,13 +400,70 @@ ul {
 }
 
 .team-card-text {
+    margin-bottom: 16px;
     font-size: 16px;
     line-height: 1.36;
     text-align: center;
     letter-spacing: 0.03em;
 }
 
+.team-card-social-links {
+    display: flex;
+    column-gap: 10px;
+}
+
+.team-card-social-link {
+    display: block;
+    line-height: 0;
+}
+
+.team-card-social-link:hover{
+    color: var(--text-link-active);
+    --social-icon-bg-clr: currentColor;
+    --social-icon-clr: var(--text-secondary);
+}
+
 /* team section styles end */
+
+
+/* clients sections styles start */
+.clients-header {
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--text-header-main);   
+}
+
+.client-list {
+    display: flex;
+    column-gap: 30px;
+}
+
+.client-link {
+    display: block;
+    padding: 16px 32px;
+    width: 170px;
+    border: 1px solid var(--client-logo-clr);
+    border-radius: 4px;
+    line-height: 0;
+}
+
+.client-logo {
+    fill: var(--client-logo-clr);
+}
+
+.client-link:hover {
+    border-color: var(--text-link-active);
+}
+
+.client-link:hover > .client-logo {
+    fill: var(--text-link-active);
+}
+
+/* clients section styles end */
 
 /* products section styles start */
 .products > .container {
@@ -382,6 +497,14 @@ ul {
     color: var(--text-btn-v2-active);
 }
 
+
+.product-filter-button:focus,
+.product-filter-button:hover {
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 
+        0px 1px 2px rgba(0, 0, 0, 0.08), 
+        0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
 .products-list {
     display: flex;
     flex-wrap: wrap;
@@ -390,6 +513,12 @@ ul {
 
 .product-card {
     width: 370px;
+}
+
+.product-card:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .product-image-container {
