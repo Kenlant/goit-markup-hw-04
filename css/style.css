@@ -29,13 +29,13 @@
     --bg-btn-v1-active: #188CE8;
     --bg-btn-v2: #F5F4FA;
     --bg-btn-v2-active: #2196F3;
+    --bg-btn-v3: rgba(255, 255, 255, 0.1);
 
     /* other collors */
     --header-bottom-border-clr: #ECECEC;
     --product-card-border-clr: #ECECEC;
     --client-logo-clr: #AFB1B8;
-    --social-icon-bg-clr: #fff;
-    --socia-icon-clr: #AFB1B8;
+    --social-icon-clr: #AFB1B8;
 }
 
 body {
@@ -233,17 +233,21 @@ ul {
 }
 
 .footer-social-link {
-    display: block;
-    line-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--bg-btn-v3);    
     
-    --social-icon-bg-clr: rgba(255, 255, 255, 0.1);;
     --social-icon-clr: var(--text-secondary);
 }
 
 .footer-social-link:hover {
-    color: var(--text-link-active);
-    --social-icon-bg-clr: currentColor;
+    background-color: var(--bg-btn-v2-active);
 }
+
 
 /* footer styles end */
 
@@ -302,13 +306,14 @@ ul {
 }
 
 .feature-card-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 30px;
-    padding: 25px 100px;
     width: 270px;
     height: 120px;
     background-color: var(--bg-feature-icon-container);
     border-radius: 4px;
-    text-align: center;
 }
 
 .feature-card-header {
@@ -413,13 +418,16 @@ ul {
 }
 
 .team-card-social-link {
-    display: block;
-    line-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50px;
 }
 
 .team-card-social-link:hover{
-    color: var(--text-link-active);
-    --social-icon-bg-clr: currentColor;
+    background-color: var(--bg-btn-v2-active);
     --social-icon-clr: var(--text-secondary);
 }
 
@@ -442,13 +450,19 @@ ul {
     column-gap: 30px;
 }
 
+.client-list-item {
+    width: calc(100% / 6 - 24px);
+    height: 92px;
+}
+
 .client-link {
-    display: block;
-    padding: 16px 32px;
-    width: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     border: 1px solid var(--client-logo-clr);
     border-radius: 4px;
-    line-height: 0;
 }
 
 .client-logo {
